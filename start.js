@@ -26,9 +26,9 @@
   // Bundle loading queue
   // Note: Preloader is loaded as a module (see Phase 0 below)
   const bundles = [
-    { name: 'libraries', path: '/libraries/index.bundle.js', progress: 10 },
-    { name: 'engine', path: '/engine/index.bundle.js', progress: 25 },
-    { name: 'game', path: `/game/${window.initConfig?.game || 'demo-slot'}/index.bundle.js`, progress: 40 }
+    { name: 'libraries', path: 'libraries/index.bundle.js', progress: 10 },
+    { name: 'engine', path: 'engine/index.bundle.js', progress: 25 },
+    { name: 'game', path: `game/${window.initConfig?.game || 'demo-slot'}/index.bundle.js`, progress: 40 }
   ];
 
   let currentProgress = 0;
@@ -148,7 +148,7 @@
       // Phase 0: Load preloader module FIRST
       console.log('📦 [PHASE 0] Loading preloader module...');
       if (window.initConfig?.localModules?.includes('preloader')) {
-        await loadScript('/modules/preloader/index.bundle.js', 0, 'Loading preloader...');
+        await loadScript('modules/preloader/index.bundle.js', 0, 'Loading preloader...');
       }
 
       // Phase 1: Load libraries bundle
@@ -185,7 +185,7 @@
       if (subsystemsToLoad.length > 0) {
         updateProgress(32, 'Loading subsystems...');
         for (const subsystemName of subsystemsToLoad) {
-          const subsystemPath = `/subsystems/${subsystemName}/index.bundle.js`;
+          const subsystemPath = `subsystems/${subsystemName}/index.bundle.js`;
           console.log(`  📦 Loading subsystem: ${subsystemName}`);
           await loadScript(subsystemPath);
         }
@@ -217,7 +217,7 @@
           // Skip preloader - already loaded in Phase 0
           if (moduleName === 'preloader') continue;
 
-          const modulePath = `/modules/${moduleName}/index.bundle.js`;
+          const modulePath = `modules/${moduleName}/index.bundle.js`;
           console.log(`  📦 Loading module: ${moduleName}`);
           await loadScript(modulePath);
         }

@@ -1,0 +1,14 @@
+{
+  "configs": {
+    "shared.slotmachine": "shared.slotmachine.json",
+    "views.layout": "views.layout.json",
+    "network": "network.json",
+    "views.mask": "views.mask.json"
+  },
+  "spritesheets": {
+    "reelset": "reelset.json",
+    "symbols": "symbols.json",
+    "background": "background.json",
+    "numbers": "numbers.json"
+  }
+}

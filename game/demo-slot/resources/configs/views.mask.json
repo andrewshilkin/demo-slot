@@ -1,0 +1,10 @@
+{
+  "mask": {
+    "enabled": true,
+    "color": "0x000000",
+    "alpha": 1,
+    "cornerRadius": 15,
+    "width": 0,
+    "height": 0
+  }
+}

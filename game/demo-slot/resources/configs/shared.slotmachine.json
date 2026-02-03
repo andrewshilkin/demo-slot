@@ -1,0 +1,59 @@
+{
+  "reels": {
+    "reelsCount": 5,
+    "symbolsVisible": 3,
+    "bufferSymbolsCount": 1,
+    "reelsSpacing": 20,
+    "symbolsSpacing": 3,
+    "reelStrips": [
+      ["A", "K", "Q", "J", "10", "9", "A", "K", "Q", "WILD", "J", "10", "FS", "9", "A", "SCATTER"],
+      ["K", "Q", "J", "10", "9", "A", "K", "Q", "J", "10", "WILD", "FS", "9", "A", "K", "Q"],
+      ["Q", "J", "10", "9", "A", "K", "Q", "J", "SCATTER", "10", "9", "FS", "A", "K", "Q", "J"],
+      ["J", "10", "9", "A", "K", "Q", "J", "10", "9", "WILD", "A", "FS", "K", "Q", "J", "10"],
+      ["10", "9", "A", "K", "Q", "J", "10", "9", "A", "K", "SCATTER", "Q", "FS", "J", "10", "9"]
+    ],
+    "symbol": {
+      "width": 150,
+      "height": 150,
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "background": {
+        "color": "0x333333",
+        "alpha": 1,
+        "radius": 10
+      },
+      "text": {
+        "fontSize": 48,
+        "fill": "0xFFFFFF",
+        "fontFamily": "Arial",
+        "fontWeight": "bold"
+      }
+    },
+    "symbolTypes": ["A", "K", "Q", "J", "10", "9", "WILD", "SCATTER", "FS"],
+    "symbolMapping": {
+      "A": "symbols:symbols/h1.png",
+      "K": "symbols:symbols/h2.png",
+      "Q": "symbols:symbols/h3.png",
+      "J": "symbols:symbols/h4.png",
+      "10": "symbols:symbols/l1.png",
+      "9": "symbols:symbols/l2.png",
+      "WILD": "symbols:symbols/l3.png",
+      "SCATTER": "symbols:symbols/l4.png"
+    },
+    "symbolMoveMapping": {
+      "A": "symbols:symbols_move/h1_move.png",
+      "K": "symbols:symbols_move/h2_move.png",
+      "Q": "symbols:symbols_move/h3_move.png",
+      "J": "symbols:symbols_move/h4_move.png",
+      "10": "symbols:symbols_move/l1_move.png",
+      "9": "symbols:symbols_move/l2_move.png",
+      "WILD": "symbols:symbols_move/l3_move.png",
+      "SCATTER": "symbols:symbols_move/l4_move.png"
+    },
+    "cascade": {
+      "spinDelay": 50,
+      "stopDelay": 100
+    }
+  }
+
+}

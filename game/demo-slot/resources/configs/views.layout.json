@@ -1,0 +1,134 @@
+{
+  "root": {
+    "name": "game_root",
+    "type": "container",
+    "children": [
+      {
+        "name": "game_background",
+        "type": "sprite",
+        "texture": "background:background",
+        "anchor": { "x": 0.5, "y": 0.5 }
+      },
+      {
+        "name": "slotmachine",
+        "type": "container",
+        "fitBox": {
+          "landscape": {
+            "left": 0.05,
+            "top": 0.02,
+            "right": 0.85,
+            "bottom": 0.98,
+            "fit": "contain",
+            "alignX": "center",
+            "alignY": "center",
+            "maxScale": 1.0,
+            "minScale": 0.3
+          },
+          "portrait": {
+            "left": 0.0,
+            "top": 0.06,
+            "right": 1,
+            "bottom": 0.72,
+            "fit": "contain",
+            "alignX": "center",
+            "alignY": "center",
+            "maxScale": 1.2,
+            "minScale": 0.4
+          }
+        },
+        "contentSize": {
+          "landscape": { "width": 900, "height": 760 },
+          "portrait": { "width": 900, "height": 700 }
+        },
+        "contentOffset": {
+          "landscape": { "x": 0, "y": 0 },
+          "portrait": { "x": 0, "y": -80 }
+        },
+        "children": [
+          {
+            "name": "reel_background",
+            "type": "container",
+            "properties": {
+              "landscape": {
+                "x": 0,
+                "y": -8,
+                "scale": 0.7
+              },
+              "portrait": {
+                "x": 0,
+                "y": -60,
+                "scale": 0.7
+              }
+            },
+            "children": [
+              {
+                "name": "reel_bg_sprite",
+                "type": "sprite",
+                "texture": "reelset:reel_background.png"
+              },
+              {
+                "name": "logo",
+                "type": "sprite",
+                "texture": "reelset:logo.png",
+                "properties": {
+                  "landscape": {
+                    "x": 0,
+                    "y": -433,
+                    "scale": 0.35
+                  },
+                  "portrait": {
+                    "x": 0,
+                    "y": -433,
+                    "scale": 0.35
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "reels",
+            "type": "container",
+            "properties": {
+              "landscape": {
+                "x": 0,
+                "y": 0,
+                "scale": 1.0
+              },
+              "portrait": {
+                "x": 0,
+                "y": -50,
+                "scale": 1.0
+              }
+            },
+            "children": [
+              {
+                "name": "mask",
+                "type": "container"
+              }
+            ]
+          },
+          {
+            "name": "reward",
+            "type": "container",
+            "properties": {
+              "landscape": {
+                "x": 0,
+                "y": 200,
+                "scale": 0.5
+              },
+              "portrait": {
+                "x": 0,
+                "y": 200,
+                "scale": 0.4
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "free_spins_popup",
+        "type": "container"
+      }
+    ]
+  }
+}

@@ -58,8 +58,10 @@
       script.async = false;
       script.onload = () => {
         console.log(`✅ Loaded: ${src}`);
-        currentProgress = progressValue;
-        updateProgress(currentProgress, message);
+        if (progressValue !== undefined) {
+          currentProgress = progressValue;
+          updateProgress(currentProgress, message);
+        }
         resolve();
       };
       script.onerror = () => {
@@ -114,6 +116,15 @@
     console.log('📍 window.GAME upgraded to:', window.GAME.constructor.name);
 
     updateProgress(60, 'Initializing game...');
+
+    // Bridge game progress events to preloader (resource loading 60-95%)
+    if (window.GAME.events?.app) {
+      window.GAME.events.app.on('progress', (data) => {
+        if (window.PRELOADER && data?.progress != null) {
+          window.PRELOADER.setProgress(data.progress, data.message);
+        }
+      });
+    }
 
     // Initialize game (loads resources 60-95%)
     await window.GAME.init();

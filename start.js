@@ -145,11 +145,9 @@
     try {
       console.log('🚀 Starting game bootstrap...');
 
-      // Phase 0: Load preloader module FIRST
+      // Phase 0: Load preloader module FIRST (always — needs to be visible during loading)
       console.log('📦 [PHASE 0] Loading preloader module...');
-      if (window.initConfig?.localModules?.includes('preloader')) {
-        await loadScript('modules/preloader/index.bundle.js', 0, 'Loading preloader...');
-      }
+      await loadScript('modules/preloader/index.bundle.js', 0, 'Loading preloader...');
 
       // Phase 1: Load libraries bundle
       console.log('📦 [PHASE 1] Loading libraries bundle...');
